@@ -1,7 +1,7 @@
 ﻿using System;
 using Autofac;
 
-namespace RegistrationConcepts
+namespace RegisteringInstances
 {
     public interface ILog
     {
@@ -10,10 +10,10 @@ namespace RegistrationConcepts
 
     public interface IConsole
     {
-        
+
     }
 
-    public class ConsoleLog: ILog, IConsole
+    public class ConsoleLog : ILog, IConsole
     {
         public void Write(string message)
         {
@@ -21,7 +21,7 @@ namespace RegistrationConcepts
         }
     }
 
-    public class EmailLog: ILog
+    public class EmailLog : ILog
     {
         private const string adminEmail = "admin@foo.com";
         public void Write(string message)
@@ -71,11 +71,12 @@ namespace RegistrationConcepts
         static void Main(string[] args)
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<EmailLog>().As<ILog>(); // using PreserveExistingDefaults causes that this class is default.
-            builder.RegisterType<ConsoleLog>()
-                .As<ILog>()
-                //.As<IConsole>()
-                .PreserveExistingDefaults(); // second registration is always the default, but we can change it
+            builder.RegisterType<EmailLog>().As<ILog>();
+            //builder.RegisterType<ConsoleLog>().As<ILog>();
+
+            var log = new ConsoleLog(); // container will use an existing (concrate) instance
+            builder.RegisterInstance(log); // istead of using reflection to find a particular instance to create
+
             builder.RegisterType<Engine>();
             builder.RegisterType<Car>();
 
@@ -85,4 +86,5 @@ namespace RegistrationConcepts
             car.Go();
         }
     }
+
 }

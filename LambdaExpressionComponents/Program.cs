@@ -1,7 +1,7 @@
 ﻿using System;
 using Autofac;
 
-namespace RegistrationConcepts
+namespace LambdaExpressionComponents
 {
     public interface ILog
     {
@@ -10,10 +10,10 @@ namespace RegistrationConcepts
 
     public interface IConsole
     {
-        
+
     }
 
-    public class ConsoleLog: ILog, IConsole
+    public class ConsoleLog : ILog, IConsole
     {
         public void Write(string message)
         {
@@ -21,7 +21,7 @@ namespace RegistrationConcepts
         }
     }
 
-    public class EmailLog: ILog
+    public class EmailLog : ILog
     {
         private const string adminEmail = "admin@foo.com";
         public void Write(string message)
@@ -39,6 +39,12 @@ namespace RegistrationConcepts
         {
             this.log = log ?? throw new ArgumentNullException(nameof(log));
             this.id = new Random().Next();
+        }
+
+        public Engine(ILog log, int id)
+        {
+            this.log = log ?? throw new ArgumentNullException(nameof(log));
+            this.id = id;
         }
 
         public void Ahead(int power)
@@ -71,12 +77,14 @@ namespace RegistrationConcepts
         static void Main(string[] args)
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<EmailLog>().As<ILog>(); // using PreserveExistingDefaults causes that this class is default.
-            builder.RegisterType<ConsoleLog>()
-                .As<ILog>()
-                //.As<IConsole>()
-                .PreserveExistingDefaults(); // second registration is always the default, but we can change it
-            builder.RegisterType<Engine>();
+            builder.RegisterType<EmailLog>().As<ILog>();
+            builder.RegisterType<ConsoleLog>().As<ILog>();
+
+            builder.Register((IComponentContext c) => new Engine(c.Resolve<ILog>(), 123)); // we specify which constructor to call by lambda
+            // we still using container (access the container through component context) and login interface is taken from component
+            // second parameter is harcoded
+
+            //builder.RegisterType<Engine>();
             builder.RegisterType<Car>();
 
             IContainer container = builder.Build();
@@ -85,4 +93,5 @@ namespace RegistrationConcepts
             car.Go();
         }
     }
+
 }

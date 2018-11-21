@@ -1,7 +1,7 @@
 ﻿using System;
 using Autofac;
 
-namespace RegistrationConcepts
+namespace ConstructorChoise
 {
     public interface ILog
     {
@@ -10,10 +10,10 @@ namespace RegistrationConcepts
 
     public interface IConsole
     {
-        
+
     }
 
-    public class ConsoleLog: ILog, IConsole
+    public class ConsoleLog : ILog, IConsole
     {
         public void Write(string message)
         {
@@ -21,7 +21,7 @@ namespace RegistrationConcepts
         }
     }
 
-    public class EmailLog: ILog
+    public class EmailLog : ILog
     {
         private const string adminEmail = "admin@foo.com";
         public void Write(string message)
@@ -58,6 +58,11 @@ namespace RegistrationConcepts
             this.log = log ?? throw new ArgumentNullException(nameof(log));
         }
 
+        public Car(Engine engine)
+        {
+            this.engine = engine ?? throw new ArgumentNullException(nameof(engine));
+            this.log = new EmailLog();
+        }
 
         public void Go()
         {
@@ -71,13 +76,12 @@ namespace RegistrationConcepts
         static void Main(string[] args)
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<EmailLog>().As<ILog>(); // using PreserveExistingDefaults causes that this class is default.
-            builder.RegisterType<ConsoleLog>()
-                .As<ILog>()
-                //.As<IConsole>()
-                .PreserveExistingDefaults(); // second registration is always the default, but we can change it
+            builder.RegisterType<EmailLog>().As<ILog>();
+            builder.RegisterType<ConsoleLog>().As<ILog>();
             builder.RegisterType<Engine>();
-            builder.RegisterType<Car>();
+            builder.RegisterType<Car>()
+                .UsingConstructor(typeof(Engine)); // please use constructor, that has one argument and the type of argument is Engine
+            // this only affects for the type Car, type Engine is still using default ConsoleLog because it uses dependency injection container
 
             IContainer container = builder.Build();
 
@@ -85,4 +89,5 @@ namespace RegistrationConcepts
             car.Go();
         }
     }
+
 }
