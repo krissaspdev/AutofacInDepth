@@ -14,7 +14,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistrationOfGenerics", "R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistrationWithParameters", "RegistrationWithParameters\RegistrationWithParameters.csproj", "{A51C741B-CA8C-4D1A-AABC-79CF02F56433}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyAndMethodInjection", "PropertyAndMethodInjection\PropertyAndMethodInjection.csproj", "{518831C1-190F-426D-B956-B4ED9987294E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropertyAndMethodInjection", "PropertyAndMethodInjection\PropertyAndMethodInjection.csproj", "{518831C1-190F-426D-B956-B4ED9987294E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScanningForTypes", "ScanningForTypes\ScanningForTypes.csproj", "{06E130DA-19F2-450F-89A6-39B1C660D909}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -110,6 +112,18 @@ Global
 		{518831C1-190F-426D-B956-B4ED9987294E}.Release|x64.Build.0 = Release|Any CPU
 		{518831C1-190F-426D-B956-B4ED9987294E}.Release|x86.ActiveCfg = Release|Any CPU
 		{518831C1-190F-426D-B956-B4ED9987294E}.Release|x86.Build.0 = Release|Any CPU
+		{06E130DA-19F2-450F-89A6-39B1C660D909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06E130DA-19F2-450F-89A6-39B1C660D909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06E130DA-19F2-450F-89A6-39B1C660D909}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{06E130DA-19F2-450F-89A6-39B1C660D909}.Debug|x64.Build.0 = Debug|Any CPU
+		{06E130DA-19F2-450F-89A6-39B1C660D909}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{06E130DA-19F2-450F-89A6-39B1C660D909}.Debug|x86.Build.0 = Debug|Any CPU
+		{06E130DA-19F2-450F-89A6-39B1C660D909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06E130DA-19F2-450F-89A6-39B1C660D909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06E130DA-19F2-450F-89A6-39B1C660D909}.Release|x64.ActiveCfg = Release|Any CPU
+		{06E130DA-19F2-450F-89A6-39B1C660D909}.Release|x64.Build.0 = Release|Any CPU
+		{06E130DA-19F2-450F-89A6-39B1C660D909}.Release|x86.ActiveCfg = Release|Any CPU
+		{06E130DA-19F2-450F-89A6-39B1C660D909}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
