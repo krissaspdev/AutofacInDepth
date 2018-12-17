@@ -28,9 +28,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelayedLazyInstantiation", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstanceScope", "InstanceScope\InstanceScope.csproj", "{464248CD-4EEC-402E-998B-6AFDB640848E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifetimeEventsCodeStartup", "LifetimeEventsCodeStartup\LifetimeEventsCodeStartup.csproj", "{1EF5F011-AAE4-4110-81D0-1368F191F09F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LifetimeEventsCodeStartup", "LifetimeEventsCodeStartup\LifetimeEventsCodeStartup.csproj", "{1EF5F011-AAE4-4110-81D0-1368F191F09F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigureModule", "ConfigureModule\ConfigureModule.csproj", "{62FBA0D9-BBEF-4303-85A2-1E5BA1DB3CFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigureModule", "ConfigureModule\ConfigureModule.csproj", "{62FBA0D9-BBEF-4303-85A2-1E5BA1DB3CFC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistrationSources", "RegistrationSources\RegistrationSources.csproj", "{485A7BB2-E968-4808-A274-08044B0BC1B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AggregateServices", "AggregateServices\AggregateServices.csproj", "{8AC272F8-2DF7-409F-BD61-50D2289D208F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -222,6 +226,30 @@ Global
 		{62FBA0D9-BBEF-4303-85A2-1E5BA1DB3CFC}.Release|x64.Build.0 = Release|Any CPU
 		{62FBA0D9-BBEF-4303-85A2-1E5BA1DB3CFC}.Release|x86.ActiveCfg = Release|Any CPU
 		{62FBA0D9-BBEF-4303-85A2-1E5BA1DB3CFC}.Release|x86.Build.0 = Release|Any CPU
+		{485A7BB2-E968-4808-A274-08044B0BC1B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{485A7BB2-E968-4808-A274-08044B0BC1B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{485A7BB2-E968-4808-A274-08044B0BC1B5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{485A7BB2-E968-4808-A274-08044B0BC1B5}.Debug|x64.Build.0 = Debug|Any CPU
+		{485A7BB2-E968-4808-A274-08044B0BC1B5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{485A7BB2-E968-4808-A274-08044B0BC1B5}.Debug|x86.Build.0 = Debug|Any CPU
+		{485A7BB2-E968-4808-A274-08044B0BC1B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{485A7BB2-E968-4808-A274-08044B0BC1B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{485A7BB2-E968-4808-A274-08044B0BC1B5}.Release|x64.ActiveCfg = Release|Any CPU
+		{485A7BB2-E968-4808-A274-08044B0BC1B5}.Release|x64.Build.0 = Release|Any CPU
+		{485A7BB2-E968-4808-A274-08044B0BC1B5}.Release|x86.ActiveCfg = Release|Any CPU
+		{485A7BB2-E968-4808-A274-08044B0BC1B5}.Release|x86.Build.0 = Release|Any CPU
+		{8AC272F8-2DF7-409F-BD61-50D2289D208F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC272F8-2DF7-409F-BD61-50D2289D208F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC272F8-2DF7-409F-BD61-50D2289D208F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8AC272F8-2DF7-409F-BD61-50D2289D208F}.Debug|x64.Build.0 = Debug|Any CPU
+		{8AC272F8-2DF7-409F-BD61-50D2289D208F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8AC272F8-2DF7-409F-BD61-50D2289D208F}.Debug|x86.Build.0 = Debug|Any CPU
+		{8AC272F8-2DF7-409F-BD61-50D2289D208F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC272F8-2DF7-409F-BD61-50D2289D208F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AC272F8-2DF7-409F-BD61-50D2289D208F}.Release|x64.ActiveCfg = Release|Any CPU
+		{8AC272F8-2DF7-409F-BD61-50D2289D208F}.Release|x64.Build.0 = Release|Any CPU
+		{8AC272F8-2DF7-409F-BD61-50D2289D208F}.Release|x86.ActiveCfg = Release|Any CPU
+		{8AC272F8-2DF7-409F-BD61-50D2289D208F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
